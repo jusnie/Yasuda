@@ -1,1 +1,0 @@
-export { DiagramRenderer } from './component';
