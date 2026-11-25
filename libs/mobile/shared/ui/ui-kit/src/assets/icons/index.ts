@@ -1,0 +1,143 @@
+import alert from './alert.svg';
+import archive from './archive.svg';
+import arrowDown from './arrow-down.svg';
+import arrowUp from './arrow-up.svg';
+import attachmentRound from './attachment-round.svg';
+import attachment from './attachment.svg';
+import camera from './camera.svg';
+import checkedSmall from './checked-small.svg';
+import checked from './checked.svg';
+import chevronDown from './chevron-down.svg';
+import chevronLeft from './chevron-left.svg';
+import chevronRight from './chevron-right.svg';
+import closeSM from './close-sm.svg';
+import close from './close.svg';
+import console from './console.svg';
+import copy from './copy.svg';
+import database from './database.svg';
+import download from './download.svg';
+import editPencil from './edit-pencil.svg';
+import exportIcon from './export-icon.svg';
+import eyeClosed from './eye-closed.svg';
+import eye from './eye.svg';
+import jsonFile from './file-types/json-file.svg';
+import txtFile from './file-types/txt-file.svg';
+import file from './file.svg';
+import folderPlus from './folder-plus.svg';
+import folder from './folder.svg';
+import gallery from './gallery.svg';
+import generatedImage from './generated-image.svg';
+import headphones from './headphones.svg';
+import history from './history.svg';
+import key from './key.svg';
+import keyboard from './keyboard.svg';
+import knobs from './knobs.svg';
+import lessText from './less-text.svg';
+import link from './link.svg';
+import lock from './lock.svg';
+import githubLogo from './logos/github.svg';
+import googleLogo from './logos/google.svg';
+import logoDark from './logos/logo-dark.svg';
+import logoLight from './logos/logo-light.svg';
+import logoSmallDark from './logos/logo-small-dark.svg';
+import logoSmallLight from './logos/logo-small-light.svg';
+import microsoftLogo from './logos/microsoft.svg';
+import logout from './logout.svg';
+import message from './message.svg';
+import microphone from './microphone.svg';
+import moreDotsInCircle from './more-dots-in-circle.svg';
+import moreDots from './more-dots.svg';
+import moreText from './more-text.svg';
+import noWifi from './no-wifi.svg';
+import pin from './pin.svg';
+import play from './play.svg';
+import plusInCircle from './plus-in-circle.svg';
+import plus from './plus.svg';
+import refresh from './refresh.svg';
+import search from './search.svg';
+import settings from './settings.svg';
+import shieldTick from './shield-tick.svg';
+import star from './star.svg';
+import stop from './stop.svg';
+import strokeLeft from './stroke-left.svg';
+import tick from './tick.svg';
+import tools from './tools.svg';
+import trashCan from './trash-can.svg';
+import unarchive from './unarchive.svg';
+import unpin from './unpin.svg';
+import uploadFile from './upload-file.svg';
+import users from './users.svg';
+import web from './web.svg';
+
+export const Icons = {
+  logoDark,
+  logoLight,
+  googleLogo,
+  microsoftLogo,
+  githubLogo,
+  jsonFile,
+  txtFile,
+  camera,
+  chevronDown,
+  chevronRight,
+  eyeClosed,
+  eye,
+  gallery,
+  logout,
+  checkedSmall,
+  checked,
+  search,
+  arrowUp,
+  attachmentRound,
+  attachment,
+  arrowDown,
+  moreDots,
+  archive,
+  copy,
+  database,
+  download,
+  pin,
+  trashCan,
+  plus,
+  file,
+  close,
+  console,
+  headphones,
+  history,
+  link,
+  alert,
+  exportIcon,
+  noWifi,
+  generatedImage,
+  editPencil,
+  uploadFile,
+  users,
+  unpin,
+  logoSmallLight,
+  logoSmallDark,
+  chevronLeft,
+  plusInCircle,
+  folderPlus,
+  folder,
+  message,
+  microphone,
+  moreDotsInCircle,
+  unarchive,
+  closeSM,
+  strokeLeft,
+  tick,
+  tools,
+  settings,
+  shieldTick,
+  star,
+  stop,
+  play,
+  refresh,
+  keyboard,
+  lessText,
+  moreText,
+  web,
+  key,
+  knobs,
+  lock,
+};

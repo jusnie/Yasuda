@@ -1,0 +1,259 @@
+{
+  "CHAT": {
+    "CHAT_SCREEN": {
+      "TEXT_LOADING": "読み込み中...",
+      "TEXT_SELECT_A_MODEL": "モデルを選択",
+      "TEXT_TEMPORARY_CHAT": "一時チャット"
+    },
+    "CHAT": {
+      "TEXT_INPUT_PLACEHOLDER": "メッセージを送信",
+      "TEXT_READ_ONLY": "閲覧のみ",
+      "TEXT_MODEL_NOT_SELECTED": "モデルが選択されていません",
+      "TEXT_MESSAGE_QUEUED": "メッセージをキューに追加しました"
+    },
+    "CHAT_MENU_LIST": {
+      "PINNED_CHAT_LIST": {
+        "TEXT_PINNED": "ピン留め"
+      },
+      "TEXT_SHARED_WITH_ME": "共有されているもの",
+      "TEXT_MY_FOLDERS": "マイフォルダ",
+      "TEXT_NEW_CHAT": "新しいチャット",
+      "TEXT_SEARCH": "検索",
+      "TEXT_THERE_ARE_NO_CHATS": "チャットはありません"
+    },
+    "SEARCH_CHATS_LIST": {
+      "TEXT_THERE_ARE_NO_CHATS": "チャットはありません"
+    },
+    "FORM_CHAT_INPUT": {
+      "TEXT_MODEL_NOT_SELECTED": "モデルが選択されていません",
+      "ATTACHMENTS_ACTIONS_POPUP": {
+        "TEXT_CAPTURE": "撮影",
+        "TEXT_CHOOSE_FROM_GALLERY": "ギャラリーから選択",
+        "TEXT_UPLOAD_FILES": "ファイルをアップロード",
+        "TEXT_YOU_CANNOT_UPLOAD_EMPTY_FILE": "空のファイルはアップロードできません。",
+        "TEXT_ATTACH_WEBPAGE": "Webページを添付",
+        "TEXT_ATTACH_KNOWLEDGE": "ナレッジを添付",
+        "TEXT_REFERENCE_CHATS": "チャットを参照"
+      },
+      "ATTACH_WEBPAGE_SHEET": {
+        "TEXT_TITLE": "Webページを添付",
+        "TEXT_WEBPAGE_URLS": "WebページのURL",
+        "TEXT_INVALID_URL": "有効な URL を入力してください（例: https://example.com）"
+      },
+      "CHAT_SETTINGS_SHEET": {
+        "TEXT_SYSTEM_PROMPT": "システムプロンプト",
+        "TEXT_SYSTEM_PROMPT_PLACEHOLDER": "未設定",
+        "TEXT_MODEL_CONTROLS": "モデルコントロール",
+        "TEXT_TOOLS": "ツール",
+        "TEXT_FULL_ACCESS_FOR_TOOLS": "フルアクセス",
+        "BUTTON_CLOSE": "閉じる"
+      },
+      "TOOLS_SHEET": {
+        "TEXT_TITLE": "ツール",
+        "TEXT_SEARCH_TOOLS": "ツールを検索",
+        "TEXT_NO_TOOLS_AVAILABLE": "利用できるツールがありません",
+        "TEXT_NOTHING_FOUND": "見つかりません。",
+        "TEXT_SIGN_IN_REQUIRED": "{{name}} — ウェブ版でログインしてください"
+      },
+      "SYSTEM_PROMPT_SHEET": {
+        "TEXT_TITLE": "システムプロンプト",
+        "TEXT_PLACEHOLDER": "このチャットのシステムプロンプトを入力してください"
+      }
+    },
+    "SHARE_CHAT_MODAL": {
+      "TEXT_SHARE_CHAT": "チャットを共有",
+      "TEXT_DESCRIPTION_NOT_SHARED": "リンク作成後に送信したメッセージは共有されません。URL を持つユーザーは共有されたチャットを閲覧できます。",
+      "TEXT_DESCRIPTION_SHARED_1": "このチャットを共有しました",
+      "TEXT_BEFORE_LINK": "以前",
+      "TEXT_DESCRIPTION_SHARED_2": "ここをクリックして",
+      "TEXT_DELETE_LINK": "このリンクを削除",
+      "TEXT_DESCRIPTION_SHARED_3": "し、新しい共有リンクを作成します。",
+      "BUTTON_COPY_LINK": "リンクをコピー",
+      "BUTTON_UPDATE_AND_COPY_LINK": "更新してリンクをコピー",
+      "TEXT_LINK_COPIED": "リンクをクリップボードにコピーしました"
+    },
+    "CREATE_CHAT": {
+      "TEXT_NEW_CHAT": "新しいチャット",
+      "TEXT_PLACEHOLDER": "今日はどのようにお手伝いできますか？",
+      "TEXT_MODEL_NOT_SELECTED": "モデルが選択されていません",
+      "TEXT_SELECT_A_MODEL": "モデルを選択",
+      "SEARCH_MODEL_VIEW": {
+        "TEXT_SELECT_A_MODEL": "モデルを選択",
+        "TEXT_SEARCH_MODEL": "モデルを検索"
+      },
+      "SEARCH_FOLDER_VIEW": {
+        "TEXT_SEARCH_FOLDER": "フォルダを検索",
+        "TEXT_NO_FOLDER": "フォルダなし",
+        "TEXT_CREATE_NEW_FOLDER": "新しいフォルダを作成"
+      },
+      "SUGGESTIONS_LIST": {
+        "TEXT_SUGGESTED": "おすすめ"
+      }
+    },
+    "ATTACHED_FILE_ITEM": {
+      "FILE_INFO_MODAL": {
+        "TEXT_FORMATTING_DISCLAIMER": "書式は元のソースと一致しない場合があります。",
+        "TEXT_NO_PREVIEW_AVAILABLE": "プレビューはありません",
+        "TEXT_EXTRACTED_LINES": {
+          "other": "{{count}} 行を抽出"
+        }
+      }
+    },
+    "SOURCE_CITATION_MODAL": {
+      "TEXT_CITATION": "引用",
+      "TEXT_SOURCE": "ソース",
+      "TEXT_RELEVANCE": "関連度",
+      "TEXT_CONTENT": "内容",
+      "TEXT_NO_PREVIEW_AVAILABLE": "プレビューはありません"
+    },
+    "ARCHIVED_CHATS_LIST": {
+      "TEXT_ARCHIVED_CHATS": "アーカイブ済みチャット",
+      "TEXT_NO_CHATS": "アーカイブ済みチャットはありません。",
+      "CHAT_ITEM": {
+        "TEXT_DELETE_CHAT": "チャットを削除しますか？",
+        "TEXT_THIS_WILL_DELETE": "{{name}} が削除されます",
+        "TEXT_RESTORE": "復元",
+        "TEXT_EXPORT": "エクスポート",
+        "TEXT_DELETE": "削除",
+        "TEXT_KEEP": "保持"
+      },
+      "ARCHIVED_CHATS_ACTIONS_SHEET": {
+        "TEXT_UNARCHIVE_CHATS": "すべてのチャットのアーカイブを解除しますか？",
+        "TEXT_ARE_YOU_SURE": "アーカイブ済みのすべてのチャットのアーカイブを解除してもよろしいですか？",
+        "BUTTON_RESTORE_ALL_CHATS": "すべてのチャットを復元",
+        "BUTTON_EXPORT_ALL_CHATS": "すべてのチャットをエクスポート"
+      }
+    },
+    "USER_MESSAGE_ACTIONS": {
+      "TEXT_EDIT": "編集",
+      "TEXT_COPY": "コピー",
+      "TEXT_DELETE": "削除"
+    },
+    "AI_MESSAGE_ACTIONS": {
+      "TEXT_EDIT": "編集",
+      "TEXT_COPY": "コピー",
+      "TEXT_CONTINUE_RESPONSE": "回答を続ける",
+      "TEXT_REGENERATE": "再生成",
+      "TEXT_DELETE": "削除",
+      "REGENERATE_MESSAGE_ACTION_SHEET": {
+        "TEXT_SUGGEST_A_CHANGE": "変更を提案",
+        "TEXT_TRY_AGAIN": "もう一度試す",
+        "TEXT_ADD_DETAILS": "詳細を追加",
+        "TEXT_MORE_CONCISE": "より簡潔に"
+      }
+    },
+    "USE_DELETE_MESSAGE": {
+      "TEXT_DELETE_MESSAGE": "メッセージを削除しますか？",
+      "TEXT_CANNOT_BE_UNDONE": "このアクションは取り消し不可です。続けますか？",
+      "BUTTON_DELETE": "削除"
+    },
+    "EDIT_MESSAGE_INPUT": {
+      "TEXT_EDIT_MESSAGE": "メッセージを編集",
+      "BUTTON_SAVE": "保存",
+      "BUTTON_SAVE_AS_COPY": "コピーとして保存",
+      "BUTTON_SEND": "送信",
+      "BUTTON_CANCEL": "キャンセル"
+    },
+    "SUGGEST_CHANGE_INPUT": {
+      "TEXT_SUGGEST_A_CHANGE": "変更を提案",
+      "BUTTON_CANCEL": "キャンセル"
+    },
+    "ARCHIVED_CHATS_FILTERS_SHEET": {
+      "USE_SEARCH_FILTERS": {
+        "TEXT_MOST_RECENT": "最新順",
+        "TEXT_OLDEST": "古い順",
+        "TEXT_A-Z": "A-Z",
+        "TEXT_Z-A": "Z-A"
+      }
+    },
+    "VOICE_MODE_MODAL": {
+      "TEXT_LISTENING": "聞いています...",
+      "TEXT_THINKING": "考えています...",
+      "TEXT_TAP_TO_INTERRUPT": "タップして中断",
+      "IMAGE_SOURCE_SHEET": {
+        "TEXT_TAKE_PHOTO": "撮影",
+        "TEXT_CHOOSE_FROM_GALLERY": "ギャラリーから選択"
+      }
+    },
+    "MESSAGE_FOLLOW_UPS": {
+      "TEXT_FOLLOW_UP": "フォローアップ"
+    },
+    "AI_MESSAGE": {
+      "TOOL_OUTPUT_SHEET": {
+        "TEXT_INPUT": "入力",
+        "TEXT_OUTPUT": "出力"
+      },
+      "TOOL_CALL_CARD": {
+        "TEXT_PREPARING_PREFIX": "準備中",
+        "TEXT_EXECUTING_PREFIX": "実行中",
+        "TEXT_VIEW_RESULT_PREFIX": "次の結果を表示",
+        "TEXT_FAILED_PREFIX": "失敗",
+        "TEXT_REJECTED_PREFIX": "拒否",
+        "TEXT_SAVE_FAILED": "ファイルを保存できませんでした"
+      },
+      "REASONING_CARD": {
+        "TEXT_THINKING": "思考中…",
+        "TEXT_THOUGHT": "思考完了",
+        "TEXT_THOUGHT_FOR_LESS_THAN_SECOND": "1秒未満思考",
+        "TEXT_THOUGHT_FOR_SECONDS": {
+          "other": "{{count}}秒間思考"
+        },
+        "TEXT_THOUGHT_FOR_MINUTES": {
+          "other": "{{count}}分間思考"
+        },
+        "TEXT_THOUGHT_FOR_HOURS": {
+          "other": "{{count}}時間思考"
+        }
+      },
+      "TOOL_APPROVAL_CARD": {
+        "TEXT_ALLOW_PREFIX": "許可",
+        "BUTTON_ALLOW": "許可",
+        "BUTTON_DENY": "拒否"
+      },
+      "ASK_USER_CARD": {
+        "TEXT_OTHER": "その他",
+        "TEXT_OTHER_PLACEHOLDER": "回答を入力",
+        "BUTTON_NEXT": "次へ",
+        "BUTTON_SUBMIT": "送信",
+        "BUTTON_DENY": "スキップ"
+      }
+    },
+    "MODEL_CONTROLS_SHEET": {
+      "TEXT_TITLE": "モデルコントロール",
+      "TEXT_SAVE_FAILED": "モデルコントロールを保存できませんでした。もう一度お試しください。",
+      "MODEL_CONTROL_ROW": {
+        "TEXT_DEFAULT": "デフォルト",
+        "TEXT_RESET_TO_DEFAULT": "デフォルトに戻す",
+        "TEXT_RESET_TO_DEFAULT_WITH_OPTION": "デフォルトに戻す（{{option}}）"
+      },
+      "MODEL_CONTROL_MENU_SHEET": {
+        "TEXT_DEFAULT": "デフォルト",
+        "TEXT_DEFAULT_WITH_OPTION": "デフォルト · {{option}}"
+      }
+    },
+    "ATTACH_KNOWLEDGE_SHEET": {
+      "TEXT_TITLE": "ナレッジ",
+      "TEXT_SEARCH_KNOWLEDGE": "ナレッジを検索",
+      "TEXT_NO_KNOWLEDGE": "ナレッジがありません。",
+      "TEXT_SEARCH_FILES": "ファイルを検索",
+      "TEXT_NO_FILES": "このナレッジベースにファイルはありません。"
+    },
+    "REFERENCE_CHATS_SHEET": {
+      "TEXT_TITLE": "チャット",
+      "TEXT_SEARCH_CHATS": "チャットの検索",
+      "TEXT_NO_CHATS": "チャットが見つかりません。"
+    },
+    "ATTACHED_CHAT_ITEMS": {
+      "TEXT_FILE": "ファイル",
+      "ATTACHED_CONTEXT_ITEM": {
+        "TEXT_COLLECTION": "コレクション",
+        "TEXT_WEBPAGE": "Webページ",
+        "TEXT_WEBPAGE_ERROR": "添付に失敗しました",
+        "TEXT_CHAT": "チャット"
+      }
+    },
+    "ATTACHED_IMAGE_ITEM": {
+      "TEXT_UPLOAD_FAILED": "アップロード失敗"
+    }
+  }
+}

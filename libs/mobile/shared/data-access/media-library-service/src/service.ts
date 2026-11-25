@@ -1,0 +1,62 @@
+import { i18n } from '@ronas-it/react-native-common-modules/i18n';
+import { PermissionStatus } from 'expo';
+import * as FileSystem from 'expo-file-system/legacy';
+// NOTE: Since SDK 57 the root import only keeps stubs that throw — the old API lives under /legacy.
+import * as MediaLibrary from 'expo-media-library/legacy';
+import { permissionAlertService } from '@open-webui-react-native/shared/utils/permission-alert';
+
+export class MediaLibraryService {
+  public async saveImage(source: string, authorizationToken?: string): Promise<string | void> {
+    const { status } = await MediaLibrary.requestPermissionsAsync(true);
+
+    if (status === PermissionStatus.DENIED) {
+      permissionAlertService.showAlert(
+        i18n.t('SHARED.MEDIA_LIBRARY_SERVICE.TEXT_SETTINGS'),
+        i18n.t('SHARED.MEDIA_LIBRARY_SERVICE.TEXT_SETTINGS_MESSAGE'),
+      );
+
+      return;
+    }
+
+    // NOTE: A local file (e.g. a rasterized diagram) is saved as is, there is nothing to download or decode.
+    if (source.startsWith('file://')) {
+      await MediaLibrary.saveToLibraryAsync(source);
+
+      return source;
+    }
+
+    const ext = this.getExtensionFromSource(source);
+    const filename = `image_${Date.now()}.${ext}`;
+    const targetPath = `${FileSystem.cacheDirectory}${filename}`;
+
+    // TODO: Update logic for download AI-generated images, root task: xhttps://app.clickup.com/t/24336023/PRD-1740
+    if (source.startsWith('http')) {
+      await FileSystem.downloadAsync(
+        source,
+        targetPath,
+        authorizationToken ? { headers: { Authorization: `Bearer ${authorizationToken}` } } : undefined,
+      );
+    } else {
+      const base64 = source.startsWith('data:image') ? source.split(',')[1] : source;
+      await FileSystem.writeAsStringAsync(targetPath, base64, {
+        encoding: FileSystem.EncodingType.Base64,
+      });
+    }
+
+    await MediaLibrary.saveToLibraryAsync(targetPath);
+
+    return targetPath;
+  }
+
+  private getExtensionFromSource(source: string): string {
+    if (source.startsWith('data:image')) {
+      const match = source.match(/data:image\/(\w+);base64/);
+
+      return match?.[1] ?? 'jpg';
+    }
+
+    return 'jpg';
+  }
+}
+
+export const mediaLibraryService = new MediaLibraryService();

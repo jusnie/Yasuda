@@ -1,0 +1,259 @@
+{
+  "CHAT": {
+    "CHAT_SCREEN": {
+      "TEXT_LOADING": "加载中...",
+      "TEXT_SELECT_A_MODEL": "选择模型",
+      "TEXT_TEMPORARY_CHAT": "临时聊天"
+    },
+    "CHAT": {
+      "TEXT_INPUT_PLACEHOLDER": "发送消息",
+      "TEXT_READ_ONLY": "只读",
+      "TEXT_MODEL_NOT_SELECTED": "未选择模型",
+      "TEXT_MESSAGE_QUEUED": "消息已加入队列"
+    },
+    "CHAT_MENU_LIST": {
+      "PINNED_CHAT_LIST": {
+        "TEXT_PINNED": "已置顶"
+      },
+      "TEXT_SHARED_WITH_ME": "与我共享",
+      "TEXT_MY_FOLDERS": "我的文件夹",
+      "TEXT_NEW_CHAT": "新对话",
+      "TEXT_SEARCH": "搜索",
+      "TEXT_THERE_ARE_NO_CHATS": "暂无对话"
+    },
+    "SEARCH_CHATS_LIST": {
+      "TEXT_THERE_ARE_NO_CHATS": "暂无对话"
+    },
+    "FORM_CHAT_INPUT": {
+      "TEXT_MODEL_NOT_SELECTED": "未选择模型",
+      "ATTACHMENTS_ACTIONS_POPUP": {
+        "TEXT_CAPTURE": "拍摄",
+        "TEXT_CHOOSE_FROM_GALLERY": "从相册选择",
+        "TEXT_UPLOAD_FILES": "上传文件",
+        "TEXT_YOU_CANNOT_UPLOAD_EMPTY_FILE": "无法上传空文件。",
+        "TEXT_ATTACH_WEBPAGE": "附加网页",
+        "TEXT_ATTACH_KNOWLEDGE": "附加知识库",
+        "TEXT_REFERENCE_CHATS": "引用其他对话"
+      },
+      "ATTACH_WEBPAGE_SHEET": {
+        "TEXT_TITLE": "附加网页",
+        "TEXT_WEBPAGE_URLS": "网页链接",
+        "TEXT_INVALID_URL": "请输入有效的 URL，例如 https://example.com"
+      },
+      "CHAT_SETTINGS_SHEET": {
+        "TEXT_SYSTEM_PROMPT": "系统提示词",
+        "TEXT_SYSTEM_PROMPT_PLACEHOLDER": "未设置",
+        "TEXT_MODEL_CONTROLS": "模型控制",
+        "TEXT_TOOLS": "工具",
+        "TEXT_FULL_ACCESS_FOR_TOOLS": "完全访问",
+        "BUTTON_CLOSE": "关闭"
+      },
+      "TOOLS_SHEET": {
+        "TEXT_TITLE": "工具",
+        "TEXT_SEARCH_TOOLS": "搜索工具",
+        "TEXT_NO_TOOLS_AVAILABLE": "没有可用的工具",
+        "TEXT_NOTHING_FOUND": "未找到结果",
+        "TEXT_SIGN_IN_REQUIRED": "{{name}} — 请在网页版中登录"
+      },
+      "SYSTEM_PROMPT_SHEET": {
+        "TEXT_TITLE": "系统提示词",
+        "TEXT_PLACEHOLDER": "为此聊天输入系统提示词"
+      }
+    },
+    "SHARE_CHAT_MODAL": {
+      "TEXT_SHARE_CHAT": "分享对话",
+      "TEXT_DESCRIPTION_NOT_SHARED": "创建链接后发送的消息不会被分享。拥有该 URL 的用户可以查看已分享的对话。",
+      "TEXT_DESCRIPTION_SHARED_1": "您已分享此对话",
+      "TEXT_BEFORE_LINK": "之前",
+      "TEXT_DESCRIPTION_SHARED_2": "点击此处",
+      "TEXT_DELETE_LINK": "删除此链接",
+      "TEXT_DESCRIPTION_SHARED_3": "并创建新的分享链接。",
+      "BUTTON_COPY_LINK": "复制链接",
+      "BUTTON_UPDATE_AND_COPY_LINK": "更新并复制链接",
+      "TEXT_LINK_COPIED": "链接已复制到剪贴板"
+    },
+    "CREATE_CHAT": {
+      "TEXT_NEW_CHAT": "新对话",
+      "TEXT_PLACEHOLDER": "今天我能为您做什么？",
+      "TEXT_MODEL_NOT_SELECTED": "未选择模型",
+      "TEXT_SELECT_A_MODEL": "选择模型",
+      "SEARCH_MODEL_VIEW": {
+        "TEXT_SELECT_A_MODEL": "选择模型",
+        "TEXT_SEARCH_MODEL": "搜索模型"
+      },
+      "SEARCH_FOLDER_VIEW": {
+        "TEXT_SEARCH_FOLDER": "搜索文件夹",
+        "TEXT_NO_FOLDER": "无文件夹",
+        "TEXT_CREATE_NEW_FOLDER": "创建新文件夹"
+      },
+      "SUGGESTIONS_LIST": {
+        "TEXT_SUGGESTED": "建议"
+      }
+    },
+    "ATTACHED_FILE_ITEM": {
+      "FILE_INFO_MODAL": {
+        "TEXT_FORMATTING_DISCLAIMER": "格式可能与源文件不一致。",
+        "TEXT_NO_PREVIEW_AVAILABLE": "暂无预览",
+        "TEXT_EXTRACTED_LINES": {
+          "other": "{{count}} 行已提取"
+        }
+      }
+    },
+    "SOURCE_CITATION_MODAL": {
+      "TEXT_CITATION": "引用",
+      "TEXT_SOURCE": "来源",
+      "TEXT_RELEVANCE": "相关度",
+      "TEXT_CONTENT": "内容",
+      "TEXT_NO_PREVIEW_AVAILABLE": "暂无预览"
+    },
+    "ARCHIVED_CHATS_LIST": {
+      "TEXT_ARCHIVED_CHATS": "已归档对话",
+      "TEXT_NO_CHATS": "暂无已归档对话。",
+      "CHAT_ITEM": {
+        "TEXT_DELETE_CHAT": "删除对话？",
+        "TEXT_THIS_WILL_DELETE": "这将删除 {{name}}",
+        "TEXT_RESTORE": "恢复",
+        "TEXT_EXPORT": "导出",
+        "TEXT_DELETE": "删除",
+        "TEXT_KEEP": "保留"
+      },
+      "ARCHIVED_CHATS_ACTIONS_SHEET": {
+        "TEXT_UNARCHIVE_CHATS": "取消归档所有对话？",
+        "TEXT_ARE_YOU_SURE": "确定要取消归档所有已归档对话吗？",
+        "BUTTON_RESTORE_ALL_CHATS": "恢复所有对话",
+        "BUTTON_EXPORT_ALL_CHATS": "导出所有对话"
+      }
+    },
+    "USER_MESSAGE_ACTIONS": {
+      "TEXT_EDIT": "编辑",
+      "TEXT_COPY": "复制",
+      "TEXT_DELETE": "删除"
+    },
+    "AI_MESSAGE_ACTIONS": {
+      "TEXT_EDIT": "编辑",
+      "TEXT_COPY": "复制",
+      "TEXT_CONTINUE_RESPONSE": "继续回复",
+      "TEXT_REGENERATE": "重新生成",
+      "TEXT_DELETE": "删除",
+      "REGENERATE_MESSAGE_ACTION_SHEET": {
+        "TEXT_SUGGEST_A_CHANGE": "建议修改",
+        "TEXT_TRY_AGAIN": "再试一次",
+        "TEXT_ADD_DETAILS": "添加细节",
+        "TEXT_MORE_CONCISE": "更简洁"
+      }
+    },
+    "USE_DELETE_MESSAGE": {
+      "TEXT_DELETE_MESSAGE": "要删除此消息吗？",
+      "TEXT_CANNOT_BE_UNDONE": "此操作无法撤销。确定要继续吗？",
+      "BUTTON_DELETE": "删除"
+    },
+    "EDIT_MESSAGE_INPUT": {
+      "TEXT_EDIT_MESSAGE": "编辑消息",
+      "BUTTON_SAVE": "保存",
+      "BUTTON_SAVE_AS_COPY": "另存为副本",
+      "BUTTON_SEND": "发送",
+      "BUTTON_CANCEL": "取消"
+    },
+    "SUGGEST_CHANGE_INPUT": {
+      "TEXT_SUGGEST_A_CHANGE": "建议修改",
+      "BUTTON_CANCEL": "取消"
+    },
+    "ARCHIVED_CHATS_FILTERS_SHEET": {
+      "USE_SEARCH_FILTERS": {
+        "TEXT_MOST_RECENT": "最新",
+        "TEXT_OLDEST": "最早",
+        "TEXT_A-Z": "A-Z",
+        "TEXT_Z-A": "Z-A"
+      }
+    },
+    "VOICE_MODE_MODAL": {
+      "TEXT_LISTENING": "正在聆听...",
+      "TEXT_THINKING": "正在思考...",
+      "TEXT_TAP_TO_INTERRUPT": "轻触以打断",
+      "IMAGE_SOURCE_SHEET": {
+        "TEXT_TAKE_PHOTO": "拍摄",
+        "TEXT_CHOOSE_FROM_GALLERY": "从相册选择"
+      }
+    },
+    "MESSAGE_FOLLOW_UPS": {
+      "TEXT_FOLLOW_UP": "追问"
+    },
+    "AI_MESSAGE": {
+      "TOOL_OUTPUT_SHEET": {
+        "TEXT_INPUT": "输入",
+        "TEXT_OUTPUT": "输出"
+      },
+      "TOOL_CALL_CARD": {
+        "TEXT_PREPARING_PREFIX": "准备中",
+        "TEXT_EXECUTING_PREFIX": "执行中",
+        "TEXT_VIEW_RESULT_PREFIX": "查看来自以下工具的结果",
+        "TEXT_FAILED_PREFIX": "失败",
+        "TEXT_REJECTED_PREFIX": "已拒绝",
+        "TEXT_SAVE_FAILED": "无法保存文件"
+      },
+      "REASONING_CARD": {
+        "TEXT_THINKING": "思考中…",
+        "TEXT_THOUGHT": "已思考",
+        "TEXT_THOUGHT_FOR_LESS_THAN_SECOND": "思考了不到 1 秒",
+        "TEXT_THOUGHT_FOR_SECONDS": {
+          "other": "思考了 {{count}} 秒"
+        },
+        "TEXT_THOUGHT_FOR_MINUTES": {
+          "other": "思考了 {{count}} 分钟"
+        },
+        "TEXT_THOUGHT_FOR_HOURS": {
+          "other": "思考了 {{count}} 小时"
+        }
+      },
+      "TOOL_APPROVAL_CARD": {
+        "TEXT_ALLOW_PREFIX": "允许",
+        "BUTTON_ALLOW": "允许",
+        "BUTTON_DENY": "拒绝"
+      },
+      "ASK_USER_CARD": {
+        "TEXT_OTHER": "其他",
+        "TEXT_OTHER_PLACEHOLDER": "输入你的回答",
+        "BUTTON_NEXT": "下一步",
+        "BUTTON_SUBMIT": "发送",
+        "BUTTON_DENY": "跳过"
+      }
+    },
+    "MODEL_CONTROLS_SHEET": {
+      "TEXT_TITLE": "模型控制",
+      "TEXT_SAVE_FAILED": "无法保存模型控制，请重试。",
+      "MODEL_CONTROL_ROW": {
+        "TEXT_DEFAULT": "默认",
+        "TEXT_RESET_TO_DEFAULT": "恢复默认",
+        "TEXT_RESET_TO_DEFAULT_WITH_OPTION": "恢复默认（{{option}}）"
+      },
+      "MODEL_CONTROL_MENU_SHEET": {
+        "TEXT_DEFAULT": "默认",
+        "TEXT_DEFAULT_WITH_OPTION": "默认 · {{option}}"
+      }
+    },
+    "ATTACH_KNOWLEDGE_SHEET": {
+      "TEXT_TITLE": "知识库",
+      "TEXT_SEARCH_KNOWLEDGE": "搜索知识库",
+      "TEXT_NO_KNOWLEDGE": "暂无知识库。",
+      "TEXT_SEARCH_FILES": "搜索文件",
+      "TEXT_NO_FILES": "此知识库中没有文件。"
+    },
+    "REFERENCE_CHATS_SHEET": {
+      "TEXT_TITLE": "对话",
+      "TEXT_SEARCH_CHATS": "搜索对话",
+      "TEXT_NO_CHATS": "未找到对话记录"
+    },
+    "ATTACHED_CHAT_ITEMS": {
+      "TEXT_FILE": "文件",
+      "ATTACHED_CONTEXT_ITEM": {
+        "TEXT_COLLECTION": "集合",
+        "TEXT_WEBPAGE": "网页",
+        "TEXT_WEBPAGE_ERROR": "附加失败",
+        "TEXT_CHAT": "对话"
+      }
+    },
+    "ATTACHED_IMAGE_ITEM": {
+      "TEXT_UPLOAD_FAILED": "上传失败"
+    }
+  }
+}

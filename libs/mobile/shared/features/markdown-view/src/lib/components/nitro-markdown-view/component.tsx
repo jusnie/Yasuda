@@ -1,0 +1,136 @@
+import { ReactElement, useCallback, useMemo } from 'react';
+import { Markdown, darkMarkdownTheme, defaultMarkdownTheme, type MarkdownRenderers } from 'react-native-nitro-markdown';
+import { CitationPrefix } from '@open-webui-react-native/mobile/chat/features/use-citations';
+import { CodeBlock } from '@open-webui-react-native/mobile/shared/ui/code-block';
+import { colors, rem, useColorScheme } from '@open-webui-react-native/mobile/shared/ui/styles';
+import { MathSvg, View } from '@open-webui-react-native/mobile/shared/ui/ui-kit';
+import { AppMarkdownViewProps } from '../../types/app-markdown-view-props';
+import { getDiagramLanguage, getOpenFenceBody, isOpenFenceContent, normalizeMathDelimiters, openLink } from '../../utils';
+import { DiagramBlock } from '../diagram-block';
+import { MarkdownImage } from '../markdown-image';
+import { MathBlock } from '../math-block';
+import { NitroMarkdownTableRenderer } from '../nitro-markdown-table-renderer';
+
+export function NitroMarkdownView({
+  codeBlockWidth,
+  onCitationPress,
+  isContentReady,
+  textColor: elementTextColor,
+  children,
+}: AppMarkdownViewProps): ReactElement {
+  const { isDarkColorScheme } = useColorScheme();
+  const textColor = elementTextColor || (isDarkColorScheme ? colors.darkTextPrimary : colors.textPrimary);
+  const openFenceBody = useMemo(
+    () => (isContentReady || typeof children !== 'string' ? null : getOpenFenceBody(children)),
+    [children, isContentReady],
+  );
+
+  const handleLinkPress = useCallback(
+    (href: string): boolean => {
+      if (href.startsWith(CitationPrefix.CITATION)) {
+        const id = href.split(CitationPrefix.CITATION)[1];
+        onCitationPress?.(id);
+
+        return false;
+      }
+
+      openLink(href);
+
+      return false;
+    },
+    [onCitationPress],
+  );
+
+  const renderers: MarkdownRenderers = useMemo(
+    () => ({
+      // eslint-disable-next-line @typescript-eslint/naming-convention
+      code_block({ content, language }) {
+        const codeBlock = (
+          <CodeBlock
+            key={`code-block-${language ?? 'text'}-${content.length}`}
+            sourceInfo={language}
+            content={content}
+            textStyle={{ fontSize: rem, lineHeight: 1.29 * rem }}
+            fenceStyle={{}}
+            codeBlockWidth={codeBlockWidth}
+          />
+        );
+        const diagramLanguage = getDiagramLanguage(language);
+
+        // NOTE: A diagram is rendered only once its fence is closed, a streaming block stays a code block.
+        // The key is stable, unlike the code block one that changes with every streamed chunk.
+        if (!diagramLanguage || isOpenFenceContent(content, openFenceBody)) {
+          return codeBlock;
+        }
+
+        return (
+          <DiagramBlock
+            key='diagram-block'
+            language={diagramLanguage}
+            content={content}>
+            {codeBlock}
+          </DiagramBlock>
+        );
+      },
+      paragraph({ node, children }) {
+        if (!node.children?.some((child) => child.type === 'image')) return undefined;
+
+        // NOTE: The package renders a paragraph as Text, where an image gets no height on iOS. The children come
+        // already split into Text runs and image blocks, so only the wrapper has to be a View.
+        return <View style={{ marginBottom: defaultMarkdownTheme.spacing.l }}>{children}</View>;
+      },
+      image({ url, alt }) {
+        if (!url) return null;
+
+        return <MarkdownImage source={url} alt={alt} />;
+      },
+      table({ node, Renderer }) {
+        return <NitroMarkdownTableRenderer node={node} Renderer={Renderer} />;
+      },
+      // eslint-disable-next-line @typescript-eslint/naming-convention
+      math_inline({ content }) {
+        if (!content) return null;
+
+        return (
+          <View className='justify-center self-start rounded-sm bg-background-tertiary p-4 py-5 mt-4'>
+            <MathSvg fontSize={rem}>{content}</MathSvg>
+          </View>
+        );
+      },
+      // eslint-disable-next-line @typescript-eslint/naming-convention
+      math_block({ content }) {
+        if (!content) return null;
+
+        return <MathBlock
+          content={content}
+          fontSize={rem}
+          isContentReady={isContentReady} />;
+      },
+    }),
+    [codeBlockWidth, isContentReady, openFenceBody],
+  );
+
+  // NOTE: The native parser only knows `$`/`$$` math, so `\(…\)`/`\[…\]` are converted for parity with DefaultMarkdownView.
+  const content = useMemo(
+    () => normalizeMathDelimiters(typeof children === 'string' ? children : String(children ?? '')),
+    [children],
+  );
+
+  const theme = useMemo(
+    () =>
+      isDarkColorScheme
+        ? { ...darkMarkdownTheme, colors: { ...darkMarkdownTheme.colors, text: textColor } }
+        : { colors: { text: textColor } },
+    [isDarkColorScheme, textColor],
+  );
+
+  return (
+    <Markdown
+      options={{ gfm: true, math: true }}
+      theme={theme}
+      renderers={renderers}
+      onLinkPress={handleLinkPress}>
+      {content}
+    </Markdown>
+  );
+}

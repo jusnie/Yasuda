@@ -1,0 +1,70 @@
+import { BottomSheetModal } from '@gorhom/bottom-sheet';
+import { useSelector } from '@legendapp/state/react';
+import { useTranslation } from '@ronas-it/react-native-common-modules/i18n';
+import { ReactElement, useRef } from 'react';
+import {
+  ActionsBottomSheet,
+  ActionsBottomSheetProps,
+  ActionSheetItemProps,
+} from '@open-webui-react-native/mobile/shared/ui/ui-kit';
+import { appState$ } from '@open-webui-react-native/shared/data-access/app-state';
+import { withOfflineGuard } from '@open-webui-react-native/shared/features/network';
+import { alertService } from '@open-webui-react-native/shared/utils/alert-service';
+import { useExportArchivedChats, useUnarchiveChats } from '../../hooks';
+
+interface ArchivedChatsActionsSheetProps {
+  renderTrigger: ActionsBottomSheetProps['renderTrigger'];
+}
+
+export function ArchivedChatsActionsSheet({ renderTrigger }: ArchivedChatsActionsSheetProps): ReactElement {
+  const translate = useTranslation('CHAT.ARCHIVED_CHATS_LIST.ARCHIVED_CHATS_ACTIONS_SHEET');
+
+  const actionsSheetRef = useRef<BottomSheetModal>(null);
+  const isOfflineMode = useSelector(appState$.isOfflineMode);
+
+  const { unarchiveAllChats, isUnarchiving: isUnarchivingAllChats } = useUnarchiveChats();
+
+  const showUnarchiveAllAlert = (): void => {
+    alertService.confirm({
+      title: translate('TEXT_UNARCHIVE_CHATS'),
+      message: translate('TEXT_ARE_YOU_SURE'),
+      onConfirm: handleConfirmUnarchiveAll,
+    });
+  };
+
+  const { exportArchivedChats, isExporting } = useExportArchivedChats();
+
+  const handleConfirmUnarchiveAll = withOfflineGuard(async (): Promise<void> => {
+    await unarchiveAllChats();
+    actionsSheetRef.current?.close();
+  });
+
+  const handleExportArchivedChats = async (): Promise<void> => {
+    await exportArchivedChats();
+    actionsSheetRef.current?.close();
+  };
+
+  const actions: Array<ActionSheetItemProps> = [
+    {
+      title: translate('BUTTON_RESTORE_ALL_CHATS'),
+      iconName: 'unarchive',
+      onPress: withOfflineGuard(showUnarchiveAllAlert),
+      isLoading: isUnarchivingAllChats,
+    },
+    {
+      title: translate('BUTTON_EXPORT_ALL_CHATS'),
+      iconName: 'exportIcon',
+      onPress: withOfflineGuard(handleExportArchivedChats),
+      isLoading: isExporting,
+    },
+  ];
+
+  return (
+    <ActionsBottomSheet
+      actions={actions}
+      areActionsInactive={isOfflineMode}
+      renderTrigger={renderTrigger}
+      ref={actionsSheetRef}
+    />
+  );
+}

@@ -1,0 +1,161 @@
+import { ReactElement, useMemo } from 'react';
+import { LayoutChangeEvent } from 'react-native';
+import { AttachedContextItem } from '@open-webui-react-native/mobile/chat/features/attached-chat-items';
+import { AttachedFileItem, formatFileSize } from '@open-webui-react-native/mobile/chat/features/attached-file-item';
+import { MessageVersionControls } from '@open-webui-react-native/mobile/chat/features/message-version-controls';
+import { UseSiblingMessagesReturn } from '@open-webui-react-native/mobile/chat/features/use-manage-messages-siblings';
+import {
+  ImagePreviewModal,
+  useImagePreview,
+} from '@open-webui-react-native/mobile/shared/features/image-preview-modal';
+import { AppMarkdownView } from '@open-webui-react-native/mobile/shared/features/markdown-view';
+import { cn, colors, screenWidth, spacings } from '@open-webui-react-native/mobile/shared/ui/styles';
+import { AppText, View } from '@open-webui-react-native/mobile/shared/ui/ui-kit';
+import { Message, usersApi } from '@open-webui-react-native/shared/data-access/api';
+import { FileType } from '@open-webui-react-native/shared/data-access/common';
+import { formatDateTime } from '@open-webui-react-native/shared/utils/date';
+import { deepMemo } from '@open-webui-react-native/shared/utils/deep-memo';
+import { getAttachedImageUrl } from '../../utils';
+import { ChatImagesGroup } from '../images';
+
+interface ChatUserMessageProps {
+  message: Message;
+  className?: string;
+  onLayoutChange?: (event: LayoutChangeEvent) => void;
+  isEditing?: boolean;
+  onPreviousSibling?: UseSiblingMessagesReturn['showPreviousSibling'];
+  onNextSibling?: UseSiblingMessagesReturn['showNextSibling'];
+  getSiblingsInfo?: UseSiblingMessagesReturn['getSiblingsInfo'];
+}
+
+const codeBlockWidth = (screenWidth - spacings.screenHorizontalOffset) * 0.9;
+
+function ChatUserMessageComponent({
+  message,
+  className,
+  onLayoutChange,
+  isEditing,
+  onPreviousSibling,
+  onNextSibling,
+  getSiblingsInfo,
+}: ChatUserMessageProps): ReactElement {
+  const { files, content: text, timestamp } = message;
+
+  const { data: userSettings } = usersApi.useGetUserSettings();
+  const isChatBubbleUIEnabled = userSettings?.ui.chatBubble ?? true;
+  const isUserMessageMarkdownEnabled = userSettings?.ui.renderMarkdownInUserMessages ?? true;
+
+  const attachedImages = useMemo(
+    () =>
+      (files ?? [])
+        .filter((file) => file.type === FileType.IMAGE)
+        .map((file, index) => ({
+          ...file,
+          url: getAttachedImageUrl(file.url),
+          index,
+        })),
+    [files],
+  );
+
+  const { handleImagePress, handleAllPhotosPress, selectedImageIndex, isPreviewVisible, handleCloseImagePress } =
+    useImagePreview();
+
+  // NOTE: `isChatBubbleUIEnabled === false` flattens the user bubble to plain flowing text (matching the AI
+  // message style), independently of `isUserMessageMarkdownEnabled` which only controls markdown rendering.
+  const renderMessageContent = (): ReactElement => {
+    const content = isUserMessageMarkdownEnabled ? (
+      <AppMarkdownView textColor={isEditing ? colors.brandPrimary : undefined} codeBlockWidth={codeBlockWidth}>
+        {text}
+      </AppMarkdownView>
+    ) : (
+      <AppText className={isEditing ? 'text-brand-primary' : undefined}>{text}</AppText>
+    );
+
+    if (!isChatBubbleUIEnabled) {
+      return content;
+    }
+
+    return (
+      <View className={cn('bg-background-secondary px-12 py-8 rounded-xl max-w-[90%]', className)}>{content}</View>
+    );
+  };
+
+  return (
+    <View className='gap-4'>
+      <AppText className='text-sm-sm sm:text-sm text-text-secondary self-end'>
+        {formatDateTime(timestamp, 'chat-relative-time')}
+      </AppText>
+      <View className='gap-6'>
+        {(files ?? []).map((file, index) => {
+          if (file.type === FileType.FILE) {
+            return (
+              <AttachedFileItem
+                key={index}
+                file={file.file}
+                subtitle={formatFileSize(file.file.meta.size)}
+                className='max-w-[70%] self-end'
+              />
+            );
+          }
+
+          if (file.type === FileType.COLLECTION) {
+            return (
+              <AttachedContextItem
+                key={index}
+                type={FileType.COLLECTION}
+                name={file.name}
+                className='max-w-[70%] self-end'
+              />
+            );
+          }
+
+          if (file.type === FileType.CHAT) {
+            return (
+              <AttachedContextItem
+                key={index}
+                type={FileType.CHAT}
+                name={file.name}
+                className='max-w-[70%] self-end' />
+            );
+          }
+
+          if (file.type === FileType.TEXT) {
+            return (
+              <AttachedContextItem
+                key={index}
+                type={FileType.TEXT}
+                name={file.name}
+                className='max-w-[70%] self-end' />
+            );
+          }
+
+          return null;
+        })}
+        <ChatImagesGroup
+          images={attachedImages}
+          shouldHideSkeleton
+          onImagePress={handleImagePress}
+          onShowAllImages={handleAllPhotosPress}
+        />
+        <View className='flex-row-reverse' onLayout={onLayoutChange}>
+          {!!text && renderMessageContent()}
+        </View>
+        <ImagePreviewModal
+          initialIndex={selectedImageIndex}
+          images={attachedImages}
+          visible={isPreviewVisible}
+          onClosePress={handleCloseImagePress}
+        />
+        <MessageVersionControls
+          message={message}
+          onNextSibling={onNextSibling}
+          onPreviousSibling={onPreviousSibling}
+          getSiblingsInfo={getSiblingsInfo}
+        />
+      </View>
+    </View>
+  );
+}
+
+//NOTE It is necessary to avoid a jump when re-rendering a component due to a change in the reference of files prop value
+export const ChatUserMessage = deepMemo(ChatUserMessageComponent);

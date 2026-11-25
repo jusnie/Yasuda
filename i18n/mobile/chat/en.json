@@ -1,0 +1,263 @@
+{
+  "CHAT": {
+    "CHAT_SCREEN": {
+      "TEXT_LOADING": "Loading...",
+      "TEXT_SELECT_A_MODEL": "Select a model",
+      "TEXT_TEMPORARY_CHAT": "Temporary Chat"
+    },
+    "CHAT": {
+      "TEXT_INPUT_PLACEHOLDER": "Send a message",
+      "TEXT_READ_ONLY": "Read only",
+      "TEXT_MODEL_NOT_SELECTED": "Model not selected",
+      "TEXT_MESSAGE_QUEUED": "Message queued"
+    },
+    "CHAT_MENU_LIST": {
+      "PINNED_CHAT_LIST": {
+        "TEXT_PINNED": "Pinned"
+      },
+      "TEXT_SHARED_WITH_ME": "Shared with me",
+      "TEXT_MY_FOLDERS": "My folders",
+      "TEXT_NEW_CHAT": "New chat",
+      "TEXT_SEARCH": "Search",
+      "TEXT_THERE_ARE_NO_CHATS": "There are no chats"
+    },
+    "SEARCH_CHATS_LIST": {
+      "TEXT_THERE_ARE_NO_CHATS": "There are no chats"
+    },
+    "FORM_CHAT_INPUT": {
+      "TEXT_MODEL_NOT_SELECTED": "Model not selected",
+      "ATTACHMENTS_ACTIONS_POPUP": {
+        "TEXT_CAPTURE": "Capture",
+        "TEXT_CHOOSE_FROM_GALLERY": "Choose from gallery",
+        "TEXT_UPLOAD_FILES": "Upload files",
+        "TEXT_YOU_CANNOT_UPLOAD_EMPTY_FILE": "You cannot upload an empty file.",
+        "TEXT_ATTACH_WEBPAGE": "Attach Webpage",
+        "TEXT_ATTACH_KNOWLEDGE": "Attach Knowledge",
+        "TEXT_REFERENCE_CHATS": "Reference Chats"
+      },
+      "ATTACH_WEBPAGE_SHEET": {
+        "TEXT_TITLE": "Attach Webpage",
+        "TEXT_WEBPAGE_URLS": "Webpage URLs",
+        "TEXT_INVALID_URL": "Please enter a valid URL, e.g. https://example.com"
+      },
+      "CHAT_SETTINGS_SHEET": {
+        "TEXT_SYSTEM_PROMPT": "System prompt",
+        "TEXT_SYSTEM_PROMPT_PLACEHOLDER": "Not set",
+        "TEXT_MODEL_CONTROLS": "Model controls",
+        "TEXT_TOOLS": "Tools",
+        "TEXT_FULL_ACCESS_FOR_TOOLS": "Full access for tools",
+        "BUTTON_CLOSE": "Close"
+      },
+      "TOOLS_SHEET": {
+        "TEXT_TITLE": "Tools",
+        "TEXT_SEARCH_TOOLS": "Search tools",
+        "TEXT_NO_TOOLS_AVAILABLE": "No tools available",
+        "TEXT_NOTHING_FOUND": "Nothing found",
+        "TEXT_SIGN_IN_REQUIRED": "{{name}} — sign in on the web"
+      },
+      "SYSTEM_PROMPT_SHEET": {
+        "TEXT_TITLE": "System Prompt",
+        "TEXT_PLACEHOLDER": "Enter a system prompt for this chat"
+      }
+    },
+    "SHARE_CHAT_MODAL": {
+      "TEXT_SHARE_CHAT": "Share chat",
+      "TEXT_DESCRIPTION_NOT_SHARED": "Messages you send after creating your link won't be shared. Users with the URL will be able to view the shared chat.",
+      "TEXT_DESCRIPTION_SHARED_1": "You have shared this chat",
+      "TEXT_BEFORE_LINK": "before",
+      "TEXT_DESCRIPTION_SHARED_2": "Click here to",
+      "TEXT_DELETE_LINK": "delete this link",
+      "TEXT_DESCRIPTION_SHARED_3": "and create a new shared link.",
+      "BUTTON_COPY_LINK": "Copy Link",
+      "BUTTON_UPDATE_AND_COPY_LINK": "Update and Copy Link",
+      "TEXT_LINK_COPIED": "Link copied to clipboard"
+    },
+    "CREATE_CHAT": {
+      "TEXT_NEW_CHAT": "New chat",
+      "TEXT_PLACEHOLDER": "How can I help you today?",
+      "TEXT_MODEL_NOT_SELECTED": "Model not selected",
+      "TEXT_SELECT_A_MODEL": "Select a model",
+      "SEARCH_MODEL_VIEW": {
+        "TEXT_SELECT_A_MODEL": "Select a model",
+        "TEXT_SEARCH_MODEL": "Search model"
+      },
+      "SEARCH_FOLDER_VIEW": {
+        "TEXT_SEARCH_FOLDER": "Search folder",
+        "TEXT_NO_FOLDER": "No folder",
+        "TEXT_CREATE_NEW_FOLDER": "Create new folder"
+      },
+      "SUGGESTIONS_LIST": {
+        "TEXT_SUGGESTED": "Suggested"
+      }
+    },
+    "ATTACHED_FILE_ITEM": {
+      "FILE_INFO_MODAL": {
+        "TEXT_FORMATTING_DISCLAIMER": "Formatting may be inconsistent from source.",
+        "TEXT_NO_PREVIEW_AVAILABLE": "No preview available",
+        "TEXT_EXTRACTED_LINES": {
+          "one": "{{count}} Extracted line",
+          "other": "{{count}} Extracted lines"
+        }
+      }
+    },
+    "SOURCE_CITATION_MODAL": {
+      "TEXT_CITATION": "Citation",
+      "TEXT_SOURCE": "Source",
+      "TEXT_RELEVANCE": "Relevance",
+      "TEXT_CONTENT": "Content",
+      "TEXT_NO_PREVIEW_AVAILABLE": "No preview available"
+    },
+    "ARCHIVED_CHATS_LIST": {
+      "TEXT_ARCHIVED_CHATS": "Archived Chats",
+      "TEXT_NO_CHATS": "There are no archived chats.",
+      "CHAT_ITEM": {
+        "TEXT_DELETE_CHAT": "Delete chat?",
+        "TEXT_THIS_WILL_DELETE": "This will delete {{name}}",
+        "TEXT_RESTORE": "Restore",
+        "TEXT_EXPORT": "Export",
+        "TEXT_DELETE": "Delete",
+        "TEXT_KEEP": "Keep"
+      },
+      "ARCHIVED_CHATS_ACTIONS_SHEET": {
+        "TEXT_UNARCHIVE_CHATS": "Unarchive all chats?",
+        "TEXT_ARE_YOU_SURE": "Are you sure you want to unarchive all archived chats?",
+        "BUTTON_RESTORE_ALL_CHATS": "Restore all chats",
+        "BUTTON_EXPORT_ALL_CHATS": "Export all chat"
+      }
+    },
+    "USER_MESSAGE_ACTIONS": {
+      "TEXT_EDIT": "Edit",
+      "TEXT_COPY": "Copy",
+      "TEXT_DELETE": "Delete"
+    },
+    "AI_MESSAGE_ACTIONS": {
+      "TEXT_EDIT": "Edit",
+      "TEXT_COPY": "Copy",
+      "TEXT_CONTINUE_RESPONSE": "Continue response",
+      "TEXT_REGENERATE": "Regenerate",
+      "TEXT_DELETE": "Delete",
+      "REGENERATE_MESSAGE_ACTION_SHEET": {
+        "TEXT_SUGGEST_A_CHANGE": "Suggest a change",
+        "TEXT_TRY_AGAIN": "Try again",
+        "TEXT_ADD_DETAILS": "Add details",
+        "TEXT_MORE_CONCISE": "More concise"
+      }
+    },
+    "USE_DELETE_MESSAGE": {
+      "TEXT_DELETE_MESSAGE": "Delete message?",
+      "TEXT_CANNOT_BE_UNDONE": "This action cannot be undone. Do you wish to continue?",
+      "BUTTON_DELETE": "Delete"
+    },
+    "EDIT_MESSAGE_INPUT": {
+      "TEXT_EDIT_MESSAGE": "Edit message",
+      "BUTTON_SAVE": "Save",
+      "BUTTON_SAVE_AS_COPY": "Save as copy",
+      "BUTTON_SEND": "Send",
+      "BUTTON_CANCEL": "Cancel"
+    },
+    "SUGGEST_CHANGE_INPUT": {
+      "TEXT_SUGGEST_A_CHANGE": "Suggest a change",
+      "BUTTON_CANCEL": "Cancel"
+    },
+    "ARCHIVED_CHATS_FILTERS_SHEET": {
+      "USE_SEARCH_FILTERS": {
+        "TEXT_MOST_RECENT": "Most recent",
+        "TEXT_OLDEST": "Oldest",
+        "TEXT_A-Z": "A-Z",
+        "TEXT_Z-A": "Z-A"
+      }
+    },
+    "VOICE_MODE_MODAL": {
+      "TEXT_LISTENING": "Listening...",
+      "TEXT_THINKING": "Thinking...",
+      "TEXT_TAP_TO_INTERRUPT": "Tap to interrupt",
+      "IMAGE_SOURCE_SHEET": {
+        "TEXT_TAKE_PHOTO": "Take photo",
+        "TEXT_CHOOSE_FROM_GALLERY": "Choose from gallery"
+      }
+    },
+    "MESSAGE_FOLLOW_UPS": {
+      "TEXT_FOLLOW_UP": "Follow up"
+    },
+    "AI_MESSAGE": {
+      "TOOL_OUTPUT_SHEET": {
+        "TEXT_INPUT": "Input",
+        "TEXT_OUTPUT": "Output"
+      },
+      "TOOL_CALL_CARD": {
+        "TEXT_PREPARING_PREFIX": "Preparing",
+        "TEXT_EXECUTING_PREFIX": "Running",
+        "TEXT_VIEW_RESULT_PREFIX": "View result from",
+        "TEXT_FAILED_PREFIX": "Failed",
+        "TEXT_REJECTED_PREFIX": "Denied",
+        "TEXT_SAVE_FAILED": "Couldn't save the file"
+      },
+      "REASONING_CARD": {
+        "TEXT_THINKING": "Thinking…",
+        "TEXT_THOUGHT": "Thought",
+        "TEXT_THOUGHT_FOR_LESS_THAN_SECOND": "Thought for less than a second",
+        "TEXT_THOUGHT_FOR_SECONDS": {
+          "one": "Thought for {{count}} second",
+          "other": "Thought for {{count}} seconds"
+        },
+        "TEXT_THOUGHT_FOR_MINUTES": {
+          "one": "Thought for {{count}} minute",
+          "other": "Thought for {{count}} minutes"
+        },
+        "TEXT_THOUGHT_FOR_HOURS": {
+          "one": "Thought for {{count}} hour",
+          "other": "Thought for {{count}} hours"
+        }
+      },
+      "TOOL_APPROVAL_CARD": {
+        "TEXT_ALLOW_PREFIX": "Allow",
+        "BUTTON_ALLOW": "Allow",
+        "BUTTON_DENY": "Deny"
+      },
+      "ASK_USER_CARD": {
+        "TEXT_OTHER": "Other",
+        "TEXT_OTHER_PLACEHOLDER": "Type your answer",
+        "BUTTON_NEXT": "Next",
+        "BUTTON_SUBMIT": "Send",
+        "BUTTON_DENY": "Skip"
+      }
+    },
+    "MODEL_CONTROLS_SHEET": {
+      "TEXT_TITLE": "Model controls",
+      "TEXT_SAVE_FAILED": "Couldn't save model controls. Please try again.",
+      "MODEL_CONTROL_ROW": {
+        "TEXT_DEFAULT": "Default",
+        "TEXT_RESET_TO_DEFAULT": "Reset to default",
+        "TEXT_RESET_TO_DEFAULT_WITH_OPTION": "Reset to default ({{option}})"
+      },
+      "MODEL_CONTROL_MENU_SHEET": {
+        "TEXT_DEFAULT": "Default",
+        "TEXT_DEFAULT_WITH_OPTION": "Default · {{option}}"
+      }
+    },
+    "ATTACH_KNOWLEDGE_SHEET": {
+      "TEXT_TITLE": "Knowledge",
+      "TEXT_SEARCH_KNOWLEDGE": "Search knowledge",
+      "TEXT_NO_KNOWLEDGE": "There is no knowledge.",
+      "TEXT_SEARCH_FILES": "Search files",
+      "TEXT_NO_FILES": "No files in this knowledge base."
+    },
+    "REFERENCE_CHATS_SHEET": {
+      "TEXT_TITLE": "Chats",
+      "TEXT_SEARCH_CHATS": "Search Chats",
+      "TEXT_NO_CHATS": "No chats found"
+    },
+    "ATTACHED_CHAT_ITEMS": {
+      "TEXT_FILE": "File",
+      "ATTACHED_CONTEXT_ITEM": {
+        "TEXT_COLLECTION": "Collection",
+        "TEXT_WEBPAGE": "Webpage",
+        "TEXT_WEBPAGE_ERROR": "Failed to attach",
+        "TEXT_CHAT": "Chat"
+      }
+    },
+    "ATTACHED_IMAGE_ITEM": {
+      "TEXT_UPLOAD_FAILED": "Upload failed"
+    }
+  }
+}

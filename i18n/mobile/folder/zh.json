@@ -1,0 +1,57 @@
+{
+  "FOLDER": {
+    "CHATS_LIST": {
+      "TEXT_NO_CHATS": "此文件夹中没有聊天。"
+    },
+    "FOLDER_ACTIONS_SHEET": {
+      "TEXT_EDIT": "编辑",
+      "TEXT_SHARE": "分享",
+      "TEXT_EXPORT_MY_CHATS": "导出我的聊天",
+      "TEXT_DELETE": "删除",
+      "TEXT_KEEP": "保留",
+      "TEXT_DELETE_FOLDER": "删除文件夹？",
+      "TEXT_THIS_WILL_DELETE": "这将删除 {{name}}"
+    },
+    "SHARE_FOLDER_SHEET": {
+      "TEXT_SHARE_FOLDER": "共享文件夹",
+      "TEXT_PRIVATE": "私有",
+      "TEXT_PRIVATE_DESCRIPTION": "仅具有权限的选定用户和群组可以访问",
+      "TEXT_ACCESS_LIST": "有访问权限的群组和用户",
+      "TEXT_READ": "只读",
+      "TEXT_WRITE": "可编辑",
+      "BUTTON_ADD": "添加"
+    },
+    "SHARE_WITH_SHEET": {
+      "TEXT_SHARE_WITH": "共享给…",
+      "TEXT_SEARCH": "搜索",
+      "TEXT_GROUPS": "群组",
+      "TEXT_USERS": "用户",
+      "TEXT_NOBODY_TO_SHARE_WITH": "没有其他可共享此文件夹的对象。",
+      "TEXT_SELECTED_COUNT": "{{groupsCount}} 个群组，{{usersCount}} 位用户",
+      "BUTTON_ADD_SELECTED": "添加所选"
+    },
+    "UPSERT_FOLDER_SHEET": {
+      "TEXT_NEW_FOLDER": "新建文件夹",
+      "TEXT_EDIT_FOLDER": "编辑文件夹",
+      "TEXT_FOLDER_NAME": "文件夹名称",
+      "TEXT_DOCUMENT": "文档",
+      "TEXT_FILE": "文件",
+      "TEXT_COLLECTION": "集合",
+      "TEXT_FOLDER_NAME_PLACEHOLDER": "例如：我的文件夹",
+      "TEXT_SYSTEM_PROMPT": "系统提示词",
+      "TEXT_KNOWLEDGE": "知识库",
+      "BUTTON_SELECT_KNOWLEDGE": "选择知识库",
+      "BUTTON_UPLOAD_FILES": "上传文件",
+      "TEXT_YOU_CANNOT_UPLOAD_EMPTY_FILE": "无法上传空文件。",
+      "TEXT_UNSUPPORTED_TYPE": "不支持的类型。"
+    },
+    "SELECT_KNOWLEDGE_SHEET": {
+      "TEXT_SEARCH_KNOWLEDGE": "搜索知识库",
+      "TEXT_SELECT_KNOWLEDGE": "选择知识库",
+      "TEXT_NO_KNOWLEDGE": "暂无知识库。",
+      "TEXT_COLLECTIONS": "合集",
+      "TEXT_FILES": "文件",
+      "TEXT_NO_FILES": "暂无文件。"
+    }
+  }
+}

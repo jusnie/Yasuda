@@ -1,0 +1,58 @@
+import { MessageSource, Role } from '@open-webui-react-native/shared/data-access/common';
+import { ChatResponse, Message } from '../models';
+
+export function patchChatMessagesWithCompletion(
+  oldData: ChatResponse | undefined,
+  newContent: string,
+  sources?: Array<MessageSource>,
+  output?: Message['output'],
+): ChatResponse | undefined {
+  if (
+    !oldData ||
+    !oldData.chat.messages?.length ||
+    oldData.chat.messages[oldData.chat.messages.length - 1].role !== Role.ASSISTANT
+  ) {
+    return oldData;
+  }
+
+  const { chat } = oldData;
+  const { messages, history } = chat;
+
+  const lastMessage = history.messages[history.currentId];
+  if (lastMessage.role !== Role.ASSISTANT) return oldData;
+
+  const updatedLastMessage: Message = {
+    ...lastMessage,
+    content: newContent,
+    output: output ?? lastMessage.output,
+    sources: sources,
+    socketStatusData: history.messages[lastMessage.id]?.socketStatusData,
+  };
+
+  const updatedMessages = [...messages];
+  updatedMessages[updatedMessages.length - 1] = updatedLastMessage;
+
+  const updatedHistoryMessages = history?.messages
+    ? {
+        ...history.messages,
+        [updatedLastMessage.id]: updatedLastMessage,
+      }
+    : undefined;
+
+  const updatedHistory = updatedHistoryMessages
+    ? {
+        ...history,
+        messages: updatedHistoryMessages,
+        lastAssistantMessage: history?.lastAssistantMessage ?? updatedLastMessage,
+      }
+    : history;
+
+  return {
+    ...oldData,
+    chat: {
+      ...chat,
+      messages: updatedMessages,
+      history: updatedHistory,
+    },
+  };
+}
